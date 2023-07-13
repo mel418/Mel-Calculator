@@ -1,0 +1,64 @@
+html {
+    font-family: 'Hachi Maru Pop', cursive;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+}
+
+button {
+    font-family: 'Hachi Maru Pop', cursive;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    /*margin: 1px;*/
+    border-color: white;
+    border-radius: 25%;
+    box-shadow: 2.5px 2.5px 3px rgb(156, 156, 156);
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    min-height: 95vh;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#container {
+    background-color: rgb(237,206,219);
+    
+    border: solid;
+    border-width: 3px;
+    border-color: rgb(211, 165, 184);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(4,100px);
+    grid-template-rows: minmax(100px, auto)
+        repeat(5,80px);
+    gap: 10px;
+    padding: 10px;
+
+}
+
+#display {
+    grid-column: 1/-1; /*how it has it own row in flex grid*/
+    background-color: rgb(202, 202, 202);
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 15px;
+    border: solid;
+    border-color: white;
+    border-radius: 5px;
+    
+    
+
+}
+
+#zero {
+    grid-column: span 2;
+    border-radius: 10%;
+}
