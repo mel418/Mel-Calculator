@@ -1,12 +1,21 @@
-let number1 = 34;
-let operator = '+';
-let number2 = 35;
-let result = operate(number1, number2, operator)
-let solution = number1 + ' ' + operator + ' ' + number2 + ' = ' + result;
+let number1 = null;
+let operator1 = null;
+let operator2 = null;
+let number2 = null;
+let result = null
+let displayValue = 0;
+
+window.addEventListener('keydown', function(e) {
+    const key = document.querySelector((`button[data-key="${e.keyCode}"]`));
+    key.click();
+});
 
 function updateDisplay() {
     const display = document.getElementById('display');
-    display.innerText = solution;
+    display.innerText = displayValue;
+    if (displayValue.length > 9) {
+        display.innerText = displayValue.substring(0, 9);
+    }
 }
 
 updateDisplay();

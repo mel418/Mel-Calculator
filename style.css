@@ -1,20 +1,46 @@
-html {
-    font-family: 'Hachi Maru Pop', cursive;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 800;
+body {
+    font-family: 'Mali', cursive;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-weight: 500;
     font-size: 36px;
+    
+    background-color: rgb(242,101,113);
+    background-image: url(https://i.pinimg.com/originals/75/f0/af/75f0affd61206d9af379d1156a3c37e5.jpg);
+    background-size: cover;
+
+
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.329); /* Adjust the opacity as desired */
 }
 
 button {
-    font-family: 'Hachi Maru Pop', cursive;
-    font-family: 'Roboto', sans-serif;
+    background-color: rgb(235, 173, 181);
+    font-family: 'Mali', cursive;
     font-weight: 800;
     font-size: 28px;
     /*margin: 1px;*/
     border-color: white;
     border-radius: 25%;
     box-shadow: 2.5px 2.5px 3px rgb(156, 156, 156);
+    
+    
 }
+
+button:active {
+    padding: 1px 0 0 1px;
+}
+
+button.operator, button.clear, button.sign, button.percent  {
+    background-color: rgb(229, 128, 141);
+}
+
 
 #main {
     display: flex;
@@ -27,25 +53,29 @@ button {
 }
 
 #container {
+    position: absolute;
     background-color: rgb(237,206,219);
     
     border: solid;
     border-width: 3px;
-    border-color: rgb(211, 165, 184);
+    border-color: white;
     border-radius: 10px;
     display: grid;
-    grid-template-columns: repeat(4,100px);
+    grid-template-columns: repeat(4,95px);
     grid-template-rows: minmax(100px, auto)
-        repeat(5,80px);
+        repeat(5,100px);
     gap: 10px;
     padding: 10px;
+    
 
 }
 
 #display {
     grid-column: 1/-1; /*how it has it own row in flex grid*/
-    background-color: rgb(202, 202, 202);
-    
+    background-color: rgb(255, 227, 207);
+    font-weight: 800;
+    font-size: 50px;
+    color: rgb(162, 134, 255);
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -53,7 +83,6 @@ button {
     border: solid;
     border-color: white;
     border-radius: 5px;
-    
     
 
 }
