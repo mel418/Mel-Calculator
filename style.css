@@ -74,7 +74,7 @@ button.operator, button.clear, button.sign, button.percent  {
     grid-column: 1/-1; /*how it has it own row in flex grid*/
     background-color: rgb(255, 227, 207);
     font-weight: 800;
-    font-size: 50px;
+    font-size: 65px;
     color: rgb(162, 134, 255);
     display: flex;
     justify-content: flex-end;
