@@ -13,15 +13,23 @@ window.addEventListener('keydown', function(e) {
 });
 
 
-
-
 function updateDisplay() {
     const display = document.getElementById('display');
-    display.innerText = displayValue;
-    if (displayValue.length > 9) {
-        display.innerText = displayValue.substring(0, 9);
+    if (displayValue.includes('e')) {
+        const [coefficient, exponent] = displayValue.split('e');
+        const roundedCoefficient = roundLongNumber(parseFloat(coefficient), 6).toString();
+        const limitedCoefficient = roundedCoefficient.length > 5 ? roundedCoefficient.substring(0, 5) : roundedCoefficient;
+        display.innerText = `${limitedCoefficient}e${exponent}`;
     }
-    console.log(display)
+    else if (displayValue.length > 9) {
+        const roundedValue = roundLongNumber(parseFloat(displayValue), 6).toString();
+        display.innerText = roundedValue.length > 9 ? roundedValue.substring(0, 9): roundedValue;
+    }
+    else {
+        display.innerText = displayValue;
+    }
+
+    console.log(display, displayValue)
 }
 
 updateDisplay();
@@ -152,7 +160,7 @@ function inputPercent(num) {
     displayValue = (num/100).toString();
 }
 
-function inputSign() {
+function inputSign(num) {
     displayValue = (num * -1).toString();
 }
 
