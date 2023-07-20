@@ -1,51 +1,9 @@
-//MODEL
 let number1 = null;
 let operator1 = null;
 let operator2 = null;
 let number2 = null;
 let result = null
 let displayValue = '0';
-
-function add(num1, num2) {
-    return num1 + num2;
-}
-  
-function subtract(num1, num2) {
-    return num1 - num2;
-}
-
-function multiply(num1, num2) {
-    return num1 * num2;
-}
-
-function divide(num1, num2) {
-    if (num2 === 0) {
-        return "Error: Mommy Zero!";
-    }
-    return num1 / num2;
-}
-
-function operate(x, y, op) {
-    if (op === '+') {
-        return add(x,y)
-    }
-    else if (op === '-') {
-        return subtract(x,y)
-    }
-    else if (op === '*') {
-        return multiply(x,y)
-    }
-    else {
-        return divide(x,y)
-    }
-}
-
-function roundLongNumber(num, places) {
-    return parseFloat(Math.round(num + 'e' + places) + 'e-' + places);
-}
-
-
-//CONTROLLER
 const buttons = document.querySelectorAll("button");
 
 window.addEventListener('keydown', function(e) {
@@ -53,6 +11,8 @@ window.addEventListener('keydown', function(e) {
     key.click();
     displayValue = key.value;
 });
+
+
 
 
 function updateDisplay() {
@@ -192,7 +152,7 @@ function inputPercent(num) {
     displayValue = (num/100).toString();
 }
 
-function inputSign(num) {
+function inputSign() {
     displayValue = (num * -1).toString();
 }
 
@@ -208,3 +168,40 @@ function clearDisplay() {
 }
 
 
+function add(num1, num2) {
+    return num1 + num2;
+}
+  
+function subtract(num1, num2) {
+    return num1 - num2;
+}
+
+function multiply(num1, num2) {
+    return num1 * num2;
+}
+
+function divide(num1, num2) {
+    if (num2 === 0) {
+        return "Error: Mommy Zero!";
+    }
+    return num1 / num2;
+}
+
+function operate(x, y, op) {
+    if (op === '+') {
+        return add(x,y)
+    }
+    else if (op === '-') {
+        return subtract(x,y)
+    }
+    else if (op === '*') {
+        return multiply(x,y)
+    }
+    else {
+        return divide(x,y)
+    }
+}
+
+function roundLongNumber(num, places) {
+    return parseFloat(Math.round(num + 'e' + places) + 'e-' + places);
+}
