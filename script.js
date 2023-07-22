@@ -151,7 +151,11 @@ function inputEquals() {
 }
 
 function inputDecimal(dot) {
-    if (!displayValue.includes(dot)) {
+    if(displayValue === number1 || displayValue === number2) {
+        displayValue = '0';
+        displayValue += dot;
+    }
+    else if (!displayValue.includes(dot)) {
         displayValue += dot;
     }
 }
